@@ -6,7 +6,8 @@ package com.imooc.concurrent.base;
  *
  */
 public class ArmyRunnable implements Runnable{
-	//用volatile修饰的变量，线程在每次使用变量的时候，都会读取变量修改后的最新的值。
+	//对所有声明为volatile的变量（包括long和double变量）的读写是原子的
+	// 用volatile修饰的变量，线程在每次使用变量的时候，都会读取变量修改后的最新的值。
 	volatile boolean keepRunning = true;
 
 	@Override
