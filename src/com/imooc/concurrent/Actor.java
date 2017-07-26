@@ -33,9 +33,9 @@ public class Actor extends Thread{
 		actor.setName("Mr. Thread");
 		actor.start();
 
-		//启动线程通过实现Runnable接口
-		Thread actressThread=new Thread(new Actress(),"Ms. Runnable");
-		actressThread.start();
+//		//启动线程通过实现Runnable接口
+//		Thread actressThread=new Thread(new Actress(),"Ms. Runnable");
+//		actressThread.start();
 	}
 	
 }
