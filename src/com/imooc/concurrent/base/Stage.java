@@ -27,12 +27,11 @@ public class Stage extends Thread{
 		armyOfSuiDynasty.start();
 		
 		armyOfRevolt.start();
-		//舞台线程休眠，若不使用sleep方法，某些线程里的run方法将没时间执行,
+		//舞台线程（即主线程）休眠，若不使用sleep方法，某些线程里的run方法将没时间执行,
 		//调用了sleep方法，则可保证在一个正在执行的线程休眠时另一个线程还会执行
 		try {
 			Thread.sleep(50);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println("正当双方激战正酣，半路杀出了个程咬金");
@@ -54,7 +53,7 @@ public class Stage extends Thread{
 		}
 		//关键先生的run方法开始执行，因为armyOfSuiDynasty和armyOfRevolty两个线程都已结束，java虚拟机实际执行的是mrCheng的单线程
 		mrCheng.start();
-		//等待该线程终止。 即只有该线程执行完后才会执行该线程后面的程序。
+		//等待该线程终止。 即只有该线程执行完后才会执行舞台线程（即主线程）后面的程序。
 		try {
 			mrCheng.join();
 		} catch (InterruptedException e) {
